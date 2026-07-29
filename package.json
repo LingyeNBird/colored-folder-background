@@ -1,0 +1,107 @@
+{
+  "name": "colored-folder-background",
+  "displayName": "彩色文件夹背景",
+  "description": "为 VS Code Explorer 中的本地文件和文件夹添加可配置的背景色与文字水印。",
+  "version": "0.4.0",
+  "publisher": "lingyenbird",
+  "author": "LingyeNBird",
+  "license": "AGPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LingyeNBird/colored-folder-background.git"
+  },
+  "homepage": "https://github.com/LingyeNBird/colored-folder-background#readme",
+  "bugs": {
+    "url": "https://github.com/LingyeNBird/colored-folder-background/issues"
+  },
+  "pricing": "Free",
+  "markdown": "github",
+  "engines": {
+    "vscode": "^1.130.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "explorer",
+    "file explorer",
+    "folder",
+    "folder color",
+    "folder background",
+    "watermark",
+    "background",
+    "opacity",
+    "中文",
+    "文件夹背景",
+    "文件夹颜色",
+    "水印"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onCommand:coloredFolderBackground.setColor",
+    "onCommand:coloredFolderBackground.removeColor",
+    "onCommand:coloredFolderBackground.applyInjection",
+    "onCommand:coloredFolderBackground.disableInjection",
+    "onCommand:coloredFolderBackground.clearAllColors"
+  ],
+  "extensionKind": [
+    "ui"
+  ],
+  "extensionDependencies": [
+    "be5invis.vscode-custom-css"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "coloredFolderBackground.setColor",
+        "title": "设置背景颜色",
+        "category": "彩色文件夹背景"
+      },
+      {
+        "command": "coloredFolderBackground.removeColor",
+        "title": "移除背景颜色",
+        "category": "彩色文件夹背景"
+      },
+      {
+        "command": "coloredFolderBackground.applyInjection",
+        "title": "应用 Explorer 背景颜色",
+        "category": "彩色文件夹背景"
+      },
+      {
+        "command": "coloredFolderBackground.disableInjection",
+        "title": "禁用 Explorer 背景注入",
+        "category": "彩色文件夹背景"
+      },
+      {
+        "command": "coloredFolderBackground.clearAllColors",
+        "title": "清除所有背景颜色",
+        "category": "彩色文件夹背景"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "coloredFolderBackground.setColor",
+          "when": "resourceScheme == file",
+          "group": "7_modification@10"
+        },
+        {
+          "command": "coloredFolderBackground.removeColor",
+          "when": "resourceScheme == file",
+          "group": "7_modification@11"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p .",
+    "watch": "tsc -w -p .",
+    "package": "pnpm run compile && pnpm exec vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "@types/vscode": "^1.125.0",
+    "@vscode/vsce": "^3.7.1",
+    "typescript": "^5.9.3"
+  }
+}
