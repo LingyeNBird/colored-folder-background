@@ -93,8 +93,6 @@ pnpm run compile
 pnpm run package
 ```
 
-自动发布流程见 [docs/publishing.md](docs/publishing.md)。
-
 ## 许可证
 
 本项目采用 [GNU Affero General Public License v3.0](LICENSE) 授权。

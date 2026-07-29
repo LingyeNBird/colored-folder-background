@@ -5,7 +5,6 @@ tsconfig.json
 pnpm-lock.yaml
 .vscodeignore
 .github/**
-docs/**
 .gitignore
 media/screenshots/.gitkeep
 *.vsix
