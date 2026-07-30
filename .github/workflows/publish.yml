@@ -1,4 +1,4 @@
-name: Publish VS Code Extension
+name: Create GitHub Release
 
 on:
   push:
@@ -6,11 +6,11 @@ on:
       - 'v*'
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  publish:
-    name: Build and publish
+  release:
+    name: Build and release
     runs-on: ubuntu-latest
 
     steps:
@@ -35,18 +35,24 @@ jobs:
         env:
           RELEASE_TAG: ${{ github.ref_name }}
         run: |
-          package_version="$(node -p \"require('./package.json').version\")"
+          package_version="$(node -p 'require("./package.json").version')"
           test "v${package_version}" = "${RELEASE_TAG}"
 
       - name: Build VSIX
         run: pnpm run package
 
-      - name: Publish to Visual Studio Marketplace
+      - name: Create or update GitHub Release
         env:
-          VSCE_PAT: ${{ secrets.VSCE_PAT }}
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
         run: |
-          package_version="$(node -p \"require('./package.json').version\")"
-          pnpm exec vsce publish \
-            --packagePath "colored-folder-background-${package_version}.vsix" \
-            --pat "${VSCE_PAT}" \
-            --skip-duplicate
+          package_version="$(node -p 'require("./package.json").version')"
+          vsix_path="colored-folder-background-${package_version}.vsix"
+          if gh release view "${RELEASE_TAG}" --repo "${GITHUB_REPOSITORY}" >/dev/null 2>&1; then
+            gh release upload "${RELEASE_TAG}" "${vsix_path}" --clobber --repo "${GITHUB_REPOSITORY}"
+          else
+            gh release create "${RELEASE_TAG}" "${vsix_path}" \
+              --repo "${GITHUB_REPOSITORY}" \
+              --title "${RELEASE_TAG}" \
+              --generate-notes
+          fi

@@ -6,11 +6,28 @@
 
 > 注意：此扩展使用 `be5invis.vscode-custom-css` 向 VS Code 工作台注入本地运行时。该方式并非 VS Code 公开扩展 API，可能触发工作台完整性提示，并且 VS Code 更新后需要重新应用注入。
 
-<!--
-Screenshots belong in media/screenshots/.
-For Marketplace-safe screenshots, add PNG/WebP files there and reference them with an HTTPS GitHub URL after the files are pushed, for example:
-https://raw.githubusercontent.com/LingyeNBird/colored-folder-background/main/media/screenshots/explorer-watermark.png
--->
+## 实际效果
+
+### Explorer 区域背景与水印
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="media/screenshots/sample1.png" alt="多个文件夹区域的背景色和文字水印" width="260" />
+      <br />
+      <sub>递归文件夹背景与文字水印</sub>
+    </td>
+    <td width="50%" align="center">
+      <img src="media/screenshots/simple2.png" alt="嵌套文件夹规则的背景色和文字水印" width="260" />
+      <br />
+      <sub>嵌套目录规则与独立区域配色</sub>
+    </td>
+  </tr>
+</table>
+
+### 背景编辑器
+
+![背景、文字、字体和描边样式编辑器](media/screenshots/setting_page.png)
 
 ## 功能
 
