@@ -2,7 +2,7 @@
   "name": "colored-folder-background",
   "displayName": "彩色文件夹背景",
   "description": "为 VS Code Explorer 中的本地文件和文件夹添加可配置的背景色与文字水印。",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "publisher": "lingyenbird",
   "author": "LingyeNBird",
   "license": "AGPL-3.0-only",

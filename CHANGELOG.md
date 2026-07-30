@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented in this file.
 
+## 0.4.1 — 2026-07-30
+
+### Changed
+
+- Added an Explorer-inspired Marketplace icon and matching minimalist README banner.
+- Refined the icon's filled color plane and left-aligned Explorer glyphs.
+
 ## 0.4.0 — 2026-07-30
 
 ### Added
