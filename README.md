@@ -1,4 +1,4 @@
-![Colored Folder Background — VS Code Explorer 的色彩区域与文字水印](media/banner.png?v=3)
+![Colored Folder Background — VS Code Explorer 的色彩区域与文字水印](media/banner.png?v=4)
 
 # 彩色文件夹背景
 
