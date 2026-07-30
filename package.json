@@ -37,6 +37,7 @@
     "水印"
   ],
   "main": "./dist/extension.js",
+  "icon": "media/icon.png",
   "activationEvents": [
     "onCommand:coloredFolderBackground.setColor",
     "onCommand:coloredFolderBackground.removeColor",

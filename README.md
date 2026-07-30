@@ -1,3 +1,5 @@
+![Colored Folder Background — VS Code Explorer 的色彩区域与文字水印](media/banner.png)
+
 # 彩色文件夹背景
 
 为 VS Code 内置资源管理器中的本地文件和文件夹添加可配置的背景色、透明度与文字水印。
