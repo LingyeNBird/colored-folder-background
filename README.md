@@ -115,3 +115,9 @@ pnpm run package
 ## 许可证
 
 本项目采用 [GNU Affero General Public License v3.0](LICENSE) 授权。
+
+
+## 推广
+
+学代码，上L站
+https://linux.do
